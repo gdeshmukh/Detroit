@@ -33,7 +33,8 @@ def animate(i):
     yar = list(agg_risk.values())
     ax1.clear()
     ax1.plot(xar,yar)
-
+    with open('scores.json', 'w') as fp:
+        json.dump(dict(agg_risk), fp)
 
 ani = animation.FuncAnimation(fig, animate, interval=1000)
 
